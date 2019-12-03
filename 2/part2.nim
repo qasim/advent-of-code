@@ -39,9 +39,12 @@ proc inputPair(integers: seq[int], desiredOutput: int): tuple[noun: int, verb: i
       integersCopy[1] = noun
       integersCopy[2] = verb
       let output = executeIntcode(integersCopy)
+      
       if output == desiredOutput:
         return (noun, verb)
+        
       inc verb
+      
     inc noun
 
   echo "Something went wrong"
