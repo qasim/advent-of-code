@@ -1,3 +1,3 @@
-# advent-of-code-2019
+# advent-of-code
 
-Solutions for [Advent of Code 2019](https://adventofcode.com/2019), written in various programming languages.
+Solutions for [Advent of Code](https://adventofcode.com), written in various programming languages.
