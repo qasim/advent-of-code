@@ -1,8 +1,7 @@
-//
-//  File.swift
-//  
-//
-//  Created by Qasim Iqbal on 2020-12-06.
-//
-
 import Foundation
+
+extension Bool {
+    public static func ^(left: Bool, right: Bool) -> Bool {
+        return left != right
+    }
+}

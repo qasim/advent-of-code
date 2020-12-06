@@ -1,33 +1,39 @@
 import Foundation
 
-let input = try! String(contentsOfFile: "input.txt")
-let groups = input
-    .components(separatedBy: "\r\n\r\n")
+// MARK: - Main
+
+let groups = mainInput
+    .components(separatedBy: "\n\n")
     .map { group in
         Group(
             people: group
-                .components(separatedBy: "\r\n")
-                .map { Person(answers: $0) })
+                .components(separatedBy: "\n")
+                .map { Person(answers: $0) }
+        )
     }
 
-print("Part 1: \(part1(groups))")
-print("Part 2: \(part2(groups))")
+print("Part 1: \(part1() ?? "nil")")
+print("Part 2: \(part2() ?? "nil")")
 
-func part1(_ groups: [Group]) -> Int {
+// MARK: - Parts
+
+func part1() -> Any? {
     groups
-    .map { group in
-        group.uniqueAnswers.count
-    }
-    .reduce(0, +)
+        .map { group in
+            group.uniqueAnswers.count
+        }
+        .reduce(0, +)
 }
 
-func part2(_ groups: [Group]) -> Int {
+func part2() -> Any? {
     groups
-    .map { group in
-        group.unanimousAnswers.count
-    }
-    .reduce(0, +)
+        .map { group in
+            group.unanimousAnswers.count
+        }
+        .reduce(0, +)
 }
+
+// MARK: - Types
 
 struct Group {
     let people: [Person]

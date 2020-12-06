@@ -1,22 +1,27 @@
 import Foundation
 
-let input = try! String(contentsOfFile: "input.txt")
-let passes = input
-    .split(whereSeparator: \.isNewline)
+// MARK: - Main
+
+let passes = mainInput
+    .components(separatedBy: "\n")
     .map { specifier in
         Pass(specifier: String(specifier))
     }
 
-print("Part 1: \(part1(passes))")
-print("Part 2: \(part2(passes))")
+print("Part 1: \(part1() ?? "nil")")
+print("Part 2: \(part2() ?? "nil")")
 
-func part1(_ passes: [Pass]) -> Int {
-    passes.map(\.seatID).max()!
+// MARK: - Parts
+
+func part1() -> Any? {
+    passes.map(\.seatID).max()
 }
 
-func part2(_ passes: [Pass]) -> Int {
-    missingSeatID(existingPasses: passes)!
+func part2() -> Any? {
+    missingSeatID(existingPasses: passes)
 }
+
+// MARK: - Helpers
 
 func missingSeatID(existingPasses: [Pass]) -> Int? {
     let existingSeatIDs = existingPasses.map(\.seatID).sorted()
@@ -28,6 +33,8 @@ func missingSeatID(existingPasses: [Pass]) -> Int? {
     let allPossibleSeatIDs = Set(firstSeatID...lastSeatID)
     return allPossibleSeatIDs.subtracting(Set(existingSeatIDs)).first
 }
+
+// MARK: - Types
 
 struct Pass {
     let specifier: String
