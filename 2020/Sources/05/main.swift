@@ -4,9 +4,7 @@ import Foundation
 
 let passes = mainInput
     .components(separatedBy: "\n")
-    .map { specifier in
-        Pass(specifier: String(specifier))
-    }
+    .map { Pass(specifier: String($0)) }
 
 print("Part 1: \(part1() ?? "nil")")
 print("Part 2: \(part2() ?? "nil")")
@@ -30,8 +28,8 @@ func missingSeatID(existingPasses: [Pass]) -> Int? {
         return nil
     }
 
-    let allPossibleSeatIDs = Set(firstSeatID...lastSeatID)
-    return allPossibleSeatIDs.subtracting(Set(existingSeatIDs)).first
+    let allPossibleSeatIDs = firstSeatID...lastSeatID
+    return Set(allPossibleSeatIDs).subtracting(Set(existingSeatIDs)).first
 }
 
 // MARK: - Types

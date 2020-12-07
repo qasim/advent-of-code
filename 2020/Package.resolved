@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Regex",
-        "repositoryURL": "https://github.com/sharplet/Regex.git",
+        "repositoryURL": "https://github.com/sharplet/Regex",
         "state": {
           "branch": null,
           "revision": "76c2b73d4281d77fc3118391877efd1bf972f515",
