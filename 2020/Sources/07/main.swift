@@ -91,10 +91,11 @@ class Bag {
             guard let bagToCheck = bagsToCheck.dequeue(), !visitedBags.contains(bagToCheck) else {
                 continue
             }
-            visitedBags.insert(bagToCheck)
 
             if bagToCheck == bag {
                 return true
+            } else {
+                visitedBags.insert(bagToCheck)
             }
 
             for childBagToCheck in bagToCheck.rules.map({ $0.bag }) {
