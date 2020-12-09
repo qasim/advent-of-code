@@ -29,9 +29,9 @@ func part2() -> Any? {
 
 extension Array where Element == Int {
     func firstExceptionOfXMAS(preamble: Int) -> Int {
-        var preambleSlice = self[0...preamble - 1]
+        var preambleSlice = self[..<preamble]
 
-        for number in self[preamble...endIndex - 1] {
+        for number in self[preamble...] {
             if !preambleSlice.containsSum(of: number) {
                 return number
             } else {
