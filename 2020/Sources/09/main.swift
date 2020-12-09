@@ -16,7 +16,7 @@ func part1() -> Any? {
 }
 
 func part2() -> Any? {
-    let contiguousSlice = numbers.contiguousSlice(of: numbers.firstExceptionOfXMAS(preamble: 25))
+    let contiguousSlice = numbers.firstContiguousSlice(summingTo: numbers.firstExceptionOfXMAS(preamble: 25))
 
     guard let min = contiguousSlice.min(), let max = contiguousSlice.max() else {
         return nil
@@ -42,7 +42,7 @@ extension Array where Element == Int {
         return 0
     }
 
-    func contiguousSlice(of number: Int) -> ArraySlice<Int> {
+    func firstContiguousSlice(summingTo number: Int) -> ArraySlice<Int> {
         var start = 0
         var size = 0
 
