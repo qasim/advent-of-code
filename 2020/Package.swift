@@ -20,6 +20,8 @@ let package = Package(
         .target(name: "08"),
         .target(name: "09"),
         .target(name: "10", dependencies: ["Utility"]),
-        .target(name: "11")
+        .target(name: "11"),
+        .target(name: "1201"),
+        .target(name: "1202")
     ]
 )
