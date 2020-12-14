@@ -2,8 +2,7 @@ import Foundation
 
 extension String {
     public subscript(index: Int) -> Character {
-        let characterIndex = self.index(startIndex, offsetBy: index)
-        return self[characterIndex]
+        return self[self.index(startIndex, offsetBy: index)]
     }
 
     public subscript(range: Range<Int>) -> Substring {
@@ -12,3 +11,14 @@ extension String {
         return self[startIndex..<stopIndex]
     }
 }
+
+extension String {
+    public mutating func replace(_ index: String.Index, with character: Character) {
+        replaceSubrange(index...index, with: String(character))
+    }
+
+    public mutating func replace(_ index: Int, with character: Character) {
+        replace(self.index(startIndex, offsetBy: index), with: character)
+    }
+}
+

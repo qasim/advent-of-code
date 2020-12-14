@@ -10,7 +10,7 @@ extension Int {
     }
 }
 
-extension Array where Element == Int {
+extension Collection where Element == Int {
     public var sum: Int {
         reduce(0, +)
     }

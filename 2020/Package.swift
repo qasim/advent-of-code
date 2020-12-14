@@ -23,6 +23,7 @@ let package = Package(
         .target(name: "11"),
         .target(name: "1201"),
         .target(name: "1202"),
-        .target(name: "13")
+        .target(name: "13"),
+        .target(name: "14", dependencies: ["Utility", .product(name: "Algorithms", package: "swift-algorithms")])
     ]
 )
