@@ -5,7 +5,6 @@ import PackageDescription
 let package = Package(
     name: "Advent of Code",
     dependencies: [
-        .package(url: "https://github.com/apple/swift-algorithms", .upToNextMinor(from: "0.0.2")),
         .package(url: "https://github.com/sharplet/Regex", .upToNextMinor(from: "2.1.1"))
     ],
     targets: [
@@ -24,6 +23,7 @@ let package = Package(
         .target(name: "1201"),
         .target(name: "1202"),
         .target(name: "13"),
-        .target(name: "14", dependencies: ["Utility", .product(name: "Algorithms", package: "swift-algorithms")])
+        .target(name: "14", dependencies: ["Utility"]),
+        .target(name: "15")
     ]
 )
