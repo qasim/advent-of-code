@@ -6,7 +6,7 @@ public struct Queue<T> {
     public init() {}
 
     public var isEmpty: Bool {
-        return list.isEmpty
+        list.isEmpty
     }
 
     public mutating func enqueue(_ element: T) {

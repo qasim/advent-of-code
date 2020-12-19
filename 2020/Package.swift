@@ -26,6 +26,7 @@ let package = Package(
         .target(name: "14", dependencies: ["Utility"]),
         .target(name: "15"),
         .target(name: "16", dependencies: ["Utility"]),
-        .target(name: "17", dependencies: ["Utility"])
+        .target(name: "17", dependencies: ["Utility"]),
+        .target(name: "18", dependencies: ["Regex", "Utility"])
     ]
 )

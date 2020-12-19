@@ -25,3 +25,9 @@ extension Collection {
         return permutations
     }
 }
+
+extension Collection {
+    public var nilIfEmpty: Self? {
+        isEmpty ? nil : self
+    }
+}
