@@ -31,3 +31,9 @@ extension Collection {
         isEmpty ? nil : self
     }
 }
+
+extension Collection {
+    public func forceMap<T>(_ transform: (Self.Element) -> T?) -> [T] {
+        map { transform($0)! }
+    }
+}
