@@ -1,6 +1,8 @@
 import Foundation
 import Utility
 
+// MARK: - Parsing
+
 enum Operation: Substring {
     case forward
     case down
@@ -12,9 +14,9 @@ struct Instruction {
     let units: Int
 }
 
-let instructions: [Instruction] = mainInput
+let instructions = mainInput
     .split(separator: "\n")
-    .map { line in
+    .map { line -> Instruction in
         let tokens = line.split(separator: " ")
         return Instruction(
             operation: .init(rawValue: tokens[0])!,

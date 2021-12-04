@@ -1,11 +1,13 @@
 import Foundation
 import Utility
 
-// MARK: - Main
+// MARK: - Parsing
 
 let depths = mainInput
     .split(separator: "\n")
     .compactMap { Int($0) }
+
+// MARK: - Main
 
 print("Part 1: \(part1() ?? "nil")")
 print("Part 2: \(part2() ?? "nil")")
