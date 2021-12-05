@@ -3,17 +3,6 @@ import Utility
 
 // MARK: - Parsing
 
-enum Operation: Substring {
-    case forward
-    case down
-    case up
-}
-
-struct Instruction {
-    let operation: Operation
-    let units: Int
-}
-
 let instructions = mainInput
     .split(separator: "\n")
     .map { line -> Instruction in
@@ -64,4 +53,17 @@ func part2() -> Any? {
     }
 
     return horizontalPosition * depth
+}
+
+// MARK: - Types
+
+enum Operation: Substring {
+    case forward
+    case down
+    case up
+}
+
+struct Instruction {
+    let operation: Operation
+    let units: Int
 }
